@@ -7,6 +7,8 @@ const mainImg = document.querySelector(".main-img");
 const trackName = document.querySelector(".track-name");
 const trackTime = document.querySelector(".progress");
 const trackFasttime = document.querySelector(".progress-container");
+const range = document.querySelector(".range");
+const volumeSetings = document.querySelector(".volume-setings");
 
 let isPlay = false;
 
@@ -36,7 +38,6 @@ function playAudio() {
   if (isPlay == false) {
     isPlay = true;
     playBtn.classList.toggle("button-pause");
-    audio.currentTime = 0;
     audio.play();
   } else {
     if (isPlay == true) {
@@ -93,3 +94,56 @@ trackFasttime.addEventListener("click", setProgress);
 
 // nextAuto
 audio.addEventListener("ended", playNext);
+
+// volume
+
+function volumeMute() {
+  if (volumeSetings.classList.contains("volume")) {
+    volumeSetings.classList.remove("volume");
+    volumeSetings.classList.add("mute");
+    audio.volume = 0;
+  } else {
+    volumeSetings.classList.remove("mute");
+    volumeSetings.classList.add("volume");
+    audio.volume = 0.3;
+  }
+}
+
+volumeSetings.addEventListener("click", volumeMute);
+
+range.onchange = function () {
+  if (this.value == this.min) {
+    audio.volume = 0;
+    volumeSetings.classList.add("mute");
+  } else if (this.value == 0.1) {
+    audio.volume = 0.1;
+    volumeSetings.classList.remove("mute");
+  } else if (this.value == 0.2) {
+    audio.volume = 0.2;
+    volumeSetings.classList.remove("mute");
+  } else if (this.value == 0.3) {
+    audio.volume = 0.3;
+    volumeSetings.classList.remove("mute");
+  } else if (this.value == 0.4) {
+    audio.volume = 0.4;
+    volumeSetings.classList.remove("mute");
+  } else if (this.value == 0.5) {
+    audio.volume = 0.5;
+    volumeSetings.classList.remove("mute");
+  } else if (this.value == 0.6) {
+    audio.volume = 0.6;
+    volumeSetings.classList.remove("mute");
+  } else if (this.value == 0.7) {
+    audio.volume = 0.7;
+    volumeSetings.classList.remove("mute");
+  } else if (this.value == 0.8) {
+    audio.volume = 0.8;
+    volumeSetings.classList.remove("mute");
+  } else if (this.value == 0.9) {
+    audio.volume = 0.9;
+    volumeSetings.classList.remove("mute");
+  } else if (this.value == this.max) {
+    audio.volume = 1;
+    volumeSetings.classList.remove("mute");
+  }
+};

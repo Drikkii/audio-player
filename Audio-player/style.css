@@ -138,25 +138,9 @@
   background-image: url(../Audio-player/svg/mute.svg);
 }
 
-.volume-slider {
+.range {
   position: absolute;
-  left: 90%;
-  top: 90%;
-  z-index: 99;
-  width: 100px;
-  height: 15px;
-  background: rgb(5, 5, 5);
-  box-shadow: 0 0 20px #000a;
-  transition: 0.25s;
-}
-.volume-percentage {
-  background: coral;
-  height: 100%;
-  width: 75%;
-}
-.volume-setings :hover {
-  .volume-slider {
-    left: 123px;
-    width: 120px;
-  }
+  top: 91%;
+  left: 50%;
+  background-color: black;
 }
