@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* container */
+.container {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  /* filter: blur(5px); */
+  overflow: hidden;
+
+  z-index: -1;
+}
+.main-img {
+  filter: blur(5px);
+  height: 100vh;
+  width: 100vw;
+}
+
+.player {
+  margin: 0 auto;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  right: 20%;
+  background-color: rgb(222, 160, 160);
+  box-shadow: 0px 0px 45px 5px rgb(0, 0, 0);
+  border-radius: 5%;
+  height: 20rem;
+  width: 25rem;
+  background: rgb(34, 193, 195);
+  background: linear-gradient(
+    0deg,
+    rgba(34, 193, 195, 1) 0%,
+    rgba(253, 187, 45, 1) 100%
+  );
+}
+
+.img-albom {
+  width: 25rem;
+  height: 10rem;
+}
+.img-sized {
+  border-radius: 5%;
+  width: 100%;
+  height: 100%;
+}
+
+.play-btn {
+  cursor: pointer;
+  top: 55%;
+  left: 5%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0);
+  width: 50px;
+  height: 50px;
+}
+
+.button-play {
+  background-image: url(../Audio-player/svg/play.png);
+  background-size: 50px;
+}
+.button-pause {
+  background-image: url(../Audio-player/svg/pause.png);
+  background-size: 50px;
+}
+
+.play-next {
+  cursor: pointer;
+  top: 55%;
+  left: 90%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0);
+  width: 20px;
+  height: 20px;
+}
+.play-prev {
+  cursor: pointer;
+  top: 65%;
+  left: 90%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0);
+  width: 20px;
+  height: 20px;
+}
+
+.img-next {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+.img-prev {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.name-song {
+  line-height: 28px;
+  position: absolute;
+  top: 55%;
+  left: 35%;
+}
+
+.progress-container {
+  margin: 0 auto;
+  margin-top: 6rem;
+  background-color: white;
+  border-radius: 5px;
+  width: 90%;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.progress {
+  background-color: rgb(19, 19, 14);
+  border-radius: 5px;
+  height: 10px;
+}
+
+/* volume */
+.volume-setings {
+  position: absolute;
+  top: 88%;
+  left: 87%;
+  width: 2rem;
+  height: 2rem;
+}
+.volume {
+  background-image: url(../Audio-player/svg/volume.svg);
+}
+.mute {
+  background-image: url(../Audio-player/svg/mute.svg);
+}
+
+.volume-slider {
+  position: absolute;
+  left: 90%;
+  top: 90%;
+  z-index: 99;
+  width: 100px;
+  height: 15px;
+  background: rgb(5, 5, 5);
+  box-shadow: 0 0 20px #000a;
+  transition: 0.25s;
+}
+.volume-percentage {
+  background: coral;
+  height: 100%;
+  width: 75%;
+}
+.volume-setings :hover {
+  .volume-slider {
+    left: 123px;
+    width: 120px;
+  }
+}

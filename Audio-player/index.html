@@ -4,8 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Audio-player</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.scss" />
+    <link
+      rel="stylesheet"
+      href="https://necolas.github.io/normalize.css/latest/normalize.css"
+    />
   </head>
   <body>
-    <p>Проверяем</p>
+    <main class="container">
+      <img class="main-img" src="img/poster1.jpg" alt="" />
+      <section class="player">
+        <audio src="audio/Oxxxymiron - Город Под Подошвой.mp3"></audio>
+        <div class="img-albom">
+          <img class="img-sized" src="img/poster2.jpg" alt="" />
+        </div>
+        <button class="play-btn button-play"></button>
+        <button class="play-next">
+          <img class="img-next" src="svg/forward.png" alt="" />
+        </button>
+        <button class="play-prev">
+          <img class="img-prev" src="svg/backward.png" alt="" />
+        </button>
+        <div class="name-song">
+          <h3>Oxxxymiron</h3>
+          <div class="track-name">Город Под Подошвой</div>
+        </div>
+        <div class="progress-container">
+          <div class="progress"></div>
+        </div>
+        <div class="volume-setings volume"></div>
+        <div class="volume-slider">
+          <div class="volume-percentage"></div>
+        </div>
+      </section>
+    </main>
   </body>
+  <script src="audio.js"></script>
 </html>
