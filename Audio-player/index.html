@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio-player</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.scss" />
+    <link
+      rel="shortcut icon"
+      href="Favicon/favicon-32x32.png"
+      type="image/png"
+    />
+    <link rel="apple-touch-icon" href="Favicon/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="Favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/ico" href="Favicon/favicon.ico" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="main-img-container">
+        <img class="main-img" src="img/poster1.jpg" alt="" />
+      </div>
+      <section class="player">
+        <audio src="audio/Oxxxymiron - Город Под Подошвой.mp3"></audio>
+        <div class="img-albom">
+          <img class="img-sized" src="img/poster2.jpg" alt="" />
+        </div>
+        <button class="play-btn button-play"></button>
+        <button class="play-next">
+          <img class="img-next" src="svg/forward.png" alt="" />
+        </button>
+        <button class="play-prev">
+          <img class="img-prev" src="svg/backward.png" alt="" />
+        </button>
+        <div class="name-song">
+          <h3>Rammstein</h3>
+          <div class="track-name"></div>
+        </div>
+        <div class="progress-container">
+          <div class="progress"></div>
+        </div>
+
+        <div class="time-container">
+          <div class="realTime"></div>
+          <div class="fullTime"></div>
+        </div>
+
+        <div class="volume">
+          <div class="audio-volume-wrapper min-Volume">
+            <img src="svg/volume-min.svg" alt="Min" class="audio-icon" />
+          </div>
+          <div class="audio-container">
+            <div class="volume-audio"></div>
+            <div class="level-audio"></div>
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="40"
+              class="track-volume"
+            />
+          </div>
+          <div class="audio-volume-wrapper max-Volume">
+            <img src="svg/volume-max.svg" alt="Max" class="audio-icon" />
+          </div>
+        </div>
+      </section>
+      <section class="fake"></section>
+      <footer class="footer">
+        <a href="https://github.com/Drikkii"
+          ><div class="github">
+            <img class="Ficon" src="svg/github-mark.svg" alt="" /></div
+        ></a>
+        <div class="years">2023</div>
+        <a href="https://rs.school/js-stage0/"
+          ><div class="rsschool">
+            <img class="Ficon" src="svg/rs_school_js.svg" alt="" /></div
+        ></a>
+      </footer>
+    </main>
+  </body>
+
+  <script src="audio.js"></script>
+</html>
