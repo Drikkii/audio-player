@@ -9,6 +9,10 @@ const trackTime = document.querySelector(".progress");
 const trackFasttime = document.querySelector(".progress-container");
 const range = document.querySelector(".range");
 const volumeSetings = document.querySelector(".volume-setings");
+const realTime = document.querySelector(".realTime");
+const fullTime = document.querySelector(".fullTime");
+const minVolume = document.querySelector(".min-Volume");
+const maxVolume = document.querySelector(".max-Volume");
 
 let isPlay = false;
 
@@ -95,55 +99,68 @@ trackFasttime.addEventListener("click", setProgress);
 // nextAuto
 audio.addEventListener("ended", playNext);
 
-// volume
+// VolumePower//
+const volumeLvl = {
+  volume: document.querySelector(".track-volume"),
+  level: document.querySelector(".level-audio"),
+};
 
-function volumeMute() {
-  if (volumeSetings.classList.contains("volume")) {
-    volumeSetings.classList.remove("volume");
-    volumeSetings.classList.add("mute");
-    audio.volume = 0;
-  } else {
-    volumeSetings.classList.remove("mute");
-    volumeSetings.classList.add("volume");
-    audio.volume = 0.3;
-  }
+volumeLvl.volume.addEventListener("input", volumPower);
+function volumPower() {
+  const point = volumeLvl.volume.value / 100;
+  audio.volume = point;
+  volumeLvl.level.style.width = "40%";
+  volumeLvl.level.style.width = `${volumeLvl.volume.value}%`;
 }
 
-volumeSetings.addEventListener("click", volumeMute);
+// volumeButton(icon)
+function minVol() {
+  audio.volume = 0;
+  volumeLvl.volume.value = 0;
+  volumeLvl.level.style.width = 0;
+}
+minVolume.addEventListener("click", minVol);
 
-range.onchange = function () {
-  if (this.value == this.min) {
-    audio.volume = 0;
-    volumeSetings.classList.add("mute");
-  } else if (this.value == 0.1) {
-    audio.volume = 0.1;
-    volumeSetings.classList.remove("mute");
-  } else if (this.value == 0.2) {
-    audio.volume = 0.2;
-    volumeSetings.classList.remove("mute");
-  } else if (this.value == 0.3) {
-    audio.volume = 0.3;
-    volumeSetings.classList.remove("mute");
-  } else if (this.value == 0.4) {
-    audio.volume = 0.4;
-    volumeSetings.classList.remove("mute");
-  } else if (this.value == 0.5) {
-    audio.volume = 0.5;
-    volumeSetings.classList.remove("mute");
-  } else if (this.value == 0.6) {
-    audio.volume = 0.6;
-    volumeSetings.classList.remove("mute");
-  } else if (this.value == 0.7) {
-    audio.volume = 0.7;
-    volumeSetings.classList.remove("mute");
-  } else if (this.value == 0.8) {
-    audio.volume = 0.8;
-    volumeSetings.classList.remove("mute");
-  } else if (this.value == 0.9) {
-    audio.volume = 0.9;
-    volumeSetings.classList.remove("mute");
-  } else if (this.value == this.max) {
-    audio.volume = 1;
-    volumeSetings.classList.remove("mute");
+// max
+function maxVol() {
+  audio.volume = 1;
+  volumeLvl.volume.value = 100;
+  volumeLvl.level.style.width = "100%";
+}
+maxVolume.addEventListener("click", maxVol);
+
+// preLoad procent
+window.addEventListener("load", () => {
+  load();
+});
+
+function load() {
+  volumeLvl.level.style.width = "40%";
+}
+
+// TIME
+
+function allTIme() {
+  realTime.textContent = audio.currentTime;
+}
+
+audio.addEventListener("timeupdate", function (e) {
+  const time = e.target.currentTime;
+  let min = Math.floor(time / 60);
+  let sec = Math.floor(time % 60);
+
+  const duration = e.target.duration;
+  let sec1 = Math.floor(duration % 60);
+  if (sec1 < 10) {
+    sec1 = "0" + sec1;
   }
-};
+  let value = Math.floor(duration / 60) + ":" + sec1;
+  if (isNaN(audio.duration)) {
+    value = "--:--";
+  }
+  if (sec < 10) {
+    sec = "0" + sec;
+  }
+  realTime.textContent = min + ":" + sec;
+  fullTime.textContent = value;
+});
