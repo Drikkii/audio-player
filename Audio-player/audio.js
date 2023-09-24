@@ -20,12 +20,7 @@ let isPlay = false;
 let playNum = 0;
 
 // название песен
-const songs = [
-  "Город Под Подошвой",
-  "Организация",
-  "Где Нас Нет",
-  "Всего Лишь Писатель",
-];
+const songs = ["Deutschland", "Pussy", "Du hast", "Amerika"];
 
 // init0
 function loadSong(song) {
