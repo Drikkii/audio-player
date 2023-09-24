@@ -18,15 +18,14 @@ body {
 .main-img {
   position: absolute;
   filter: blur(5px);
-  max-height: 100rem;
-  min-height: 20rem;
+  height: 100%;
   width: 100%;
 }
 
 .player {
   margin: 0 auto;
   position: absolute;
-  top: 20%;
+  top: 5%;
   left: 20%;
   right: 20%;
   background-color: rgb(222, 160, 160);
@@ -205,6 +204,7 @@ body {
 }
 
 .audio-icon {
+  cursor: pointer;
   width: 50%;
   height: 50%;
   opacity: 1;
@@ -212,6 +212,10 @@ body {
   pointer-events: all;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.audio-icon:hover {
+  width: 60%;
+  height: 60%;
 }
 
 /* Time */
@@ -232,16 +236,28 @@ body {
   width: 40px;
 }
 
+/* fake */
+.fake {
+  top: 90%;
+  width: 100%;
+  height: 10rem;
+}
+
 /* Footer */
 
 .footer {
+  background-color: rgba(0, 0, 0, 0.308);
+  position: fixed;
+  bottom: 0;
   gap: 30px;
   justify-content: center;
   display: flex;
   width: 100%;
+  height: 5rem;
 }
 .github,
 .rsschool {
+  transition: 0.5s;
   border-radius: 20%;
   padding-top: 8px;
   text-align: center;
@@ -249,6 +265,15 @@ body {
   margin-top: 0.3rem;
   width: 4rem;
   height: 3rem;
+}
+
+.github:hover {
+  width: 4.5rem;
+  height: 3.5rem;
+}
+.rsschool:hover {
+  width: 4.5rem;
+  height: 3.5rem;
 }
 .Ficon {
   width: 3rem;
@@ -260,5 +285,34 @@ body {
 @media only screen and (max-width: 480px) {
   .player {
     left: 5%;
+  }
+}
+
+@media only screen and (max-height: 440px) {
+  .footer {
+    height: 2rem;
+  }
+  .github,
+  .rsschool {
+    padding-top: 2px;
+    width: 2rem;
+    height: 1.5rem;
+  }
+  .github:hover {
+    width: 2.2rem;
+    height: 1.7rem;
+  }
+  .rsschool:hover {
+    width: 2.2rem;
+    height: 1.7rem;
+  }
+  .Ficon {
+    width: 1.5rem;
+    height: 1.1rem;
+  }
+  .player {
+    position: absolute;
+    top: 5%;
+    scale: 0.5;
   }
 }
