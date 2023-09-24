@@ -291,6 +291,9 @@ body {
   .player {
     left: 5%;
   }
+  .volume {
+    display: none;
+  }
 }
 
 @media only screen and (max-height: 440px) {
