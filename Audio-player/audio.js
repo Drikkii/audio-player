@@ -131,6 +131,7 @@ window.addEventListener("load", () => {
 
 function load() {
   volumeLvl.level.style.width = "40%";
+  audio.volume = 0.4;
 }
 
 // TIME
